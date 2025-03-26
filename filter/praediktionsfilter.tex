@@ -1,0 +1,35 @@
+\textbf{Prädiktionsfilter:}
+\input{figures/praeditkionsfilter}
+
+\begin{align}
+Z(n) &= \sum_{k=1}^{N} h_k X(n-k)
+\end{align}
+
+% Matrix für Prädiktionsfilter
+\begin{align}
+\begin{bmatrix}
+R_{XX}(0) & R_{XX}(1) \\
+R_{XX}(1) & R_{XX}(0)
+\end{bmatrix}
+\begin{bmatrix}
+h_{1,\text{opt}} \\
+h_{2,\text{opt}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+R_{XX}(1) \\
+R_{XX}(2)
+\end{bmatrix}
+\end{align}
+
+\begin{align}
+\mathbf{R_{XX}} \cdot \mathbf{h_{\text{opt}}} &=
+\begin{bmatrix}
+R_{XX}(1) \\
+R_{XX}(2)
+\end{bmatrix}
+\end{align}
+
+\begin{align}
+\min\{\sigma_d^2\} &= \sigma_x^2 - \sum_{k} h_k R_{XX}(k)
+\end{align}

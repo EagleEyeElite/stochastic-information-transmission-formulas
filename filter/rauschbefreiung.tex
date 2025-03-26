@@ -1,0 +1,35 @@
+\textbf{Rauschbefreiungsfilter:}
+
+\input{figures/rauschbefreiungsfilter}
+
+\begin{align}
+Z(n) &= \sum_{k=0}^{N} h_k Y(n-k)
+\end{align}
+\begin{align}
+\min\{MSE\}  \Rightarrow 0 &\overset{!}{=} \frac{\partial MSE}{\partial h_i} = \frac{\partial \mathbb{E}[(X(n)-Z(n))^2]}{\partial h_i}\\
+&= \frac{\partial \mathbb{E}[u(v(n))]}{\partial h_i} = \mathbb{E}[u'(v(n)) \cdot v'(n)] = \mathbb{E}[2 \cdot (X(n)-Z(n)) \cdot \frac{\partial v(n)}{\partial h_i}]\\
+&= \mathbb{E}[2 \cdot (X(n)-Z(n)) \cdot -Y(n-i)] = -2 \cdot \mathbb{E}[(X(n)-Z(n)) \cdot Y(n-i)]\\
+\Rightarrow 0 &= \mathbb{E}[X(n) \cdot Y(n-i)] - \mathbb{E}[Z(n) \cdot Y(n-i)]\\
+\Leftrightarrow \mathbb{E}[X(n) \cdot Y(n-i)] &= \mathbb{E}[Z(n) \cdot Y(n-i)]\\
+\Leftrightarrow R_{XY}(i) &= \mathbb{E}\left[\sum_{k=0}^{N} h_k Y(n-k) \cdot Y(n-i)\right] = \sum_{k=0}^{N} h_k \cdot \mathbb{E}[Y(n-k) \cdot Y(n-i)]\\
+&= \sum_{k=0}^{N} h_k \cdot R_{YY}(i-k)\\
+\text{(da, } R_{YY}(-i) = R_{YY}(i) \text{)}\\
+\Rightarrow \mathbf{R_{YY}} \cdot \mathbf{h_{\text{opt}}} &= \mathbf{R_{XY}}
+\end{align}
+
+% In Matrixform
+\begin{align}
+\begin{bmatrix}
+R_{YY}(0) & R_{YY}(1) \\
+R_{YY}(1) & R_{YY}(0)
+\end{bmatrix}
+\begin{bmatrix}
+h_{0,\text{opt}} \\
+h_{1,\text{opt}}
+\end{bmatrix}
+&=
+\begin{bmatrix}
+R_{XY}(0) \\
+R_{XY}(1)
+\end{bmatrix}
+\end{align}

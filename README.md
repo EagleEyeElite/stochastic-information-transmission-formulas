@@ -1,1 +1,3 @@
-# stochastic-information-transmission-formulas
+# Stochastic Information Transmission Formulas
+
+See main.pdf

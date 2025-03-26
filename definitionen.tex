@@ -1,0 +1,62 @@
+\section{Definitionen}
+
+\textbf{Dichtefunktion:}
+\begin{align}
+f_X(x) &= p_X(x) = \frac{dF_X(x)}{dx}
+\end{align}
+
+f(x) und p(x) sind beide gebräuchlich
+
+\textbf{Verteilungsfunktion:}
+\begin{align}
+F_X(x) &= P(X \leq x) = \int_{-\infty}^{x} p_X(t) \, dt
+\end{align}
+
+\textbf{Wahrscheinlichkeitsfunktion:}
+\begin{align}
+P(X = x) &= p_X(x)
+\end{align}
+
+\textbf{Randdichte:}
+\begin{align}
+f_X(x) &= \int_{y} p_{X,Y}(x,y) \, dy
+\end{align}
+
+\textbf{Erwartungswert (Erstes Moment):}
+\begin{align}
+\mu_X &= \mathbb{E}_{X \sim P}[X] = \mathbb{E}[X] = \int_{x} x \cdot p_X(x) \, dx
+\end{align}
+Gemeinsamer Erwartungswert:
+\begin{align}
+\mathbb{E}[g(X,Y)] &= \int_{x}\int_{y} g(x,y) \cdot p_{X,Y}(x,y) \, dy \, dx
+\end{align}
+Mittelwert (diskret):
+\begin{align}
+\bar{y}(m,n) = \frac{1}{N}\sum_{k=1}^{N}y_k(m,n)
+\end{align}
+
+\textbf{Zweites Moment (Leistung des Signals):}
+\begin{align}
+P_X &= \mathbb{E}[X^2] = \int_{x} x^2 \cdot p_X(x) \, dx = R_{XX}(0) = \frac{1}{2\pi} \int_{-\pi}^{\pi} S_{XX}(\Omega) \, d\Omega
+\end{align}
+
+\textbf{Charakteristische Funktion einer Zufallsvariablen X:}
+\begin{align}
+\varphi_X(t) = \mathcal{F}\{f_X(x)\} = \int_{-\infty}^{\infty} e^{itx} f_X(x) \, dx =\mathbb{E}[e^{itX}]
+\end{align}
+
+Ableitung der Momente aus der charakteristischen Funktion:
+\begin{align}
+\mathbb{E}[X^n] = \frac{1}{i^n} \left. \frac{d^n}{dt^n} \varphi_X(t) \right|_{t=0}
+\end{align}
+
+\textbf{Varianz/ Dispersion:}
+\begin{align}
+\sigma_X^2 &= D^2(X) = \mathbb{E}[(X-\mu_X)^2] = P_X - \mu_X^2
+\end{align}
+
+\textbf{Transformationsformel für Dichtefunktion:}
+\begin{align}
+p_Y(y) &= \frac{p_X(x)}{|g'(x)|} |_{x=g^{-1}(y)} = \frac{p_X(g^{-1}(y))}{ \left|\frac{d}{dy}g^{-1}(y)\right|}; \quad g(x) = 4x-3 \Leftrightarrow
+g^{-1}(y) = \frac{y+3}{4} 
+\end{align}

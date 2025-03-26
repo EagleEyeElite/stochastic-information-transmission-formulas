@@ -1,0 +1,70 @@
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}[
+    auto, 
+    node distance=2cm,
+    block/.style={rectangle, draw, minimum height=0.8cm, minimum width=1.2cm},
+    mult/.style={rectangle, draw, minimum height=0.8cm, minimum width=0.8cm},
+    sum/.style={circle, draw, inner sep=0pt, minimum size=0.7cm},
+    >=latex
+]
+% Neues Eingangssignal X(n) und Noise Addition
+\node at (-2,0.3) {$X(n)$};
+\node[sum] at (-0.5,0) (noise_sum) {$+$};
+\draw[->] (-2,0) -- (noise_sum.west);
+
+% Rauschsignal von unten
+\node at (-0.5,-1.3) {$N(n)$};
+\draw[->] (-0.5,-1) -- (noise_sum.south);
+
+% Hauptleitung
+% Eingangssignal und Verzögerungselemente
+\node at (1,0.3) {$Y(n)$};
+% Positionierung der Verzögerungselemente
+\node[block] at (2.5,0) (delay1) {$z^{-1}$};
+\node[block] at (5,0) (delay2) {$z^{-1}$};
+\node at (7,0) (dots) {$\cdots$};
+\node[block] at (9,0) (delayN) {$z^{-1}$};
+% Durchgehende Pfeile, die direkt zu den Boxen führen
+\draw[->] (noise_sum.east) -- (delay1.west);
+\draw[->] (delay1.east) -- (delay2.west);
+\draw[->] (delay2.east) -- (6.4,0);
+\draw[->] (7.6,0) -- (delayN.west);
+% Multiplizierer mit X Symbol
+\node[mult] at (1,-2) (weight0) {$\times$};
+\node at (1.8,-2) {$h_0$};
+\node[mult] at (3.5,-2) (weight1) {$\times$};
+\node at (4.3,-2) {$h_1$};
+\node[mult] at (6,-2) (weight2) {$\times$};
+\node at (6.8,-2) {$h_2$};
+\node[mult] at (10,-2) (weightN) {$\times$};
+\node at (10.8,-2) {$h_N$};
+% Summierer
+\node[sum] at (1,-4) (sum0) {$+$};
+\node[sum] at (3.5,-4) (sum1) {$+$};
+\node[sum] at (6,-4) (sum2) {$+$};
+\node at (7.5,-4) (dots2) {$\cdots$};
+\node[sum] at (10,-4) (sumN) {$+$};
+% Ausgang
+\node at (11.5,-4) (output) {$Z(n)$};
+% Vertikale Verbindungen
+\draw[->] (1,0) -- (weight0);
+\draw[->] (3.5,0) -- (weight1);
+\draw[->] (6,0) -- (weight2);
+\draw[->] (delayN.east) -- ++(0.4,0) -- ++(0,-1.2) -- (10,-1.2) -- (weightN.north);
+% Verbindungen zu Summierern
+\draw[->] (weight0) -- (sum0);
+\draw[->] (weight1) -- (sum1);
+\draw[->] (weight2) -- (sum2);
+\draw[->] (weightN) -- (sumN);
+% Verbindungen zwischen Summierern
+\draw[->] (sum0) -- (sum1);
+\draw[->] (sum1) -- (sum2);
+\draw[->] (sum2) -- (dots2);
+\draw[->] (dots2) -- (sumN);
+\draw[->] (sumN) -- (output);
+\end{tikzpicture}
+\caption{Rauschbefreiungsfilter}
+\end{figure}
+
+\FloatBarrier

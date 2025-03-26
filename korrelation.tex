@@ -1,0 +1,105 @@
+\section{Korrelation}
+
+\textbf{Zusammenfassung der Korrelationseigenschaften:}
+
+\begin{itemize}
+  \item \textbf{Unkorreliert (Nicht korreliert):} 
+    Prozesse haben keine lineare Abhängigkeit.
+    \begin{align}
+      C_{XY} &= 0 \text{ oder } R_{XY}(0) = \mathbb{E}[XY] = \mathbb{E}[X] \cdot \mathbb{E}[Y]
+    \end{align}
+
+    
+  \item \textbf{Orthogonal:}
+    Prozesse haben kein gemeinsames Leistungsspektrum.
+    \begin{align}
+      R_{XY}(0) &= 0
+    \end{align}
+    
+  \item \textbf{Statistisch unabhängig:} 
+    Stärkste Form der Unabhängigkeit. Stochastische Prozesse beeinflussen sich gegenseitig in keiner Weise.
+    \begin{align}
+      p_{XY}(x,y) = p_X(x) \cdot p_Y(y)
+    \end{align}
+   
+    
+  \item \textbf{Wichtige Zusammenhänge:}
+    \begin{align}
+      &\text{Orthogonal} \Leftrightarrow  \text{Unkorreliert + mittelwertfrei}\\
+      &\text{Orthogonal (z.B.} Y=X^2 \text{für mittelwertfreies, symmetrisches X)} \not\Rightarrow \text{Statistisch unabhängig}\\
+      &\text{Statistisch unabhängig} \Rightarrow \text{Nicht korreliert}\\
+      &\text{Aus statistischer Unabhängigkeit folgt keine Aussage über Orthogonalität}
+    \end{align}
+    \textbf{Merksatz:} Die Korrelation erfasst nur lineare Zusammenhänge zwischen stochastischen Prozessen. Für nichtlineare Abhängigkeiten ist sie kein geeignetes Maß.
+\end{itemize}
+
+
+
+\textbf{Korrelation:}
+\begin{align}
+C_{XY} &= \text{Cov}(X,Y) = \mathbb{E}[(X-\mu_X)(Y-\mu_Y)] = \mathbb{E}[XY] - \mu_X \mu_Y
+\end{align}
+
+\textbf{Korrelationskoeffizient:}
+\begin{align}
+\rho_{XY} &= \frac{C_{XY}}{\sigma_X \cdot \sigma_Y}
+\end{align}
+
+
+\textbf{Kreuzkorrelation:}
+\begin{align}
+R_{XY}(k) &= \mathbb{E}[X(n)Y(n+k)]
+\end{align}
+
+\begin{align}
+R_{XY}(0) &= \mathbb{E}[XY]
+\end{align}
+
+\begin{align}
+R_{XY}(k) &= R_{YX}(-k)
+\end{align}
+
+\textbf{Autokorrelationsfunktion:}
+\begin{align}
+R_{XX}(k) &= \mathcal{F}^{-1}[S_{XX}(\Omega)] = \frac{1}{2\pi} \int_{-\pi}^{\pi} S_{XX}(\Omega) e^{j k \Omega} d\Omega
+\end{align}
+\begin{align}
+R_{XX}(0) =E[X^2(n)] = P_X(\Omega) \neq P_X
+\end{align}
+
+\textbf{Leistungsdichtespektrum:}
+\begin{align}
+R_{XX}(k) \overset{\mathcal{F}}{\circ\mbox{---}\bullet} S_{XX}(\Omega)
+\end{align}
+
+\begin{align}
+S_{XX}(\Omega) = \mathcal{F}\{R_{XX}(k)\}; R_{XX}(k) &=  \mathcal{F}^{-1}\{S_{XX}(\Omega)\}
+\end{align}
+
+\begin{align}
+R_{XX}(0) = \mathcal{F}^{-1}\{S_{XX}(\Omega)\}|_{\tau=0} = \frac{1}{2\pi} \int_{-\pi}^{\pi} S_{XX}(\Omega) \, d\Omega
+\end{align}
+
+Gibt an, wie die Leistung eines stochastischen Signals über verschiedene Frequenzen verteilt ist. Die Gesamtleistung durch Integration berechenbar.
+
+\begin{align}
+\mathcal{F}\{\delta(k)\} &= 1 \\
+\mathcal{F}\{\delta(k+1)\} &= e^{j\Omega} \\
+\mathcal{F}\{\delta(k-1)\} &= e^{-j\Omega}
+\end{align}
+
+Kreisfrequenz im kontinuierlichen Fall: $\Omega = 2 \pi f$
+
+\begin{align}
+e^{j k \Omega} = \cos(k \Omega) + j \cdot \sin(k \Omega)
+\end{align}
+
+Für symmetrisches Intervall
+\begin{align}
+\int_{-a}^{a} e^{j k \Omega} d\Omega = \int_{-a}^{a} \cos(k \Omega) d\Omega
+\end{align}
+
+\textbf{Signal Noise Ratio (SNR):}
+\begin{align}
+\text{SNR} &= \frac{P_X}{P_N} = \frac{R_{XX}(0)}{R_{NN}(0)} = \frac{\int_{-\pi}^{\pi} S_{XX}(\Omega) \, d\Omega}{\int_{-\pi}^{\pi} S_{NN}(\Omega) \, d\Omega}\\
+\end{align}

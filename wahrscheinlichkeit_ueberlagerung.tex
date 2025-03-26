@@ -1,0 +1,33 @@
+\section{Wahrscheinlichkeiten bei Überlagerung}
+
+\textbf{AWGN-Kanal}\\
+Additives weißes Rauschen, mittelwertfrei
+
+
+\textbf{Nutzsignal (useful signal):}
+\begin{align}
+p_U(u)
+\end{align}
+
+\textbf{Rauschsignal (noise signal):}
+\begin{align}
+p_N(n)
+\end{align}
+
+\textbf{Empfangssignal (received signal):}
+\begin{align}
+p_Y(y)
+\end{align}
+
+\textbf{Überlagerung wird zur Faltung:}\\
+Addition von Nutzsignal und Rauschen:
+\begin{align}
+y = u + n \Rightarrow p_Y(y) = \int p_U(u) \cdot p_N(y-u) \, du = (p_U * p_N)(y)
+\end{align}
+
+Die Addition zweier Zufallsvariablen wird zur Faltung ihrer Wahrscheinlichkeitsdichtefunktionen.
+
+\textbf{Fehlerwahrscheinlichkeit:}
+\begin{align}
+P_{\text{Fehler}} = \int p_E(e)\,de
+\end{align}

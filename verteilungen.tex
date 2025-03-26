@@ -1,0 +1,77 @@
+\section{Verteilungen}
+
+\textbf{ADV: Amplituden Dichteverteilung / Wahrscheinlichkeitsdichte}
+\begin{enumerate}
+\item $p(x) \geq 0, \forall x \in \mathbb{R}$
+\item stetig
+\item $\int_{x} p(x) dx = 1$
+\end{enumerate}
+
+\textbf{VDF: Verteilungsdichtefunktion/ Dichtefunktion (PDF: Probability density function):}
+\begin{align}
+p_X(x) - \text{(klein Buchstabe)}
+\end{align}
+
+\textbf{PMF: Wahrscheinlichkeitsmassenverteilung (Probability Mass function):}
+\begin{align}
+P_X(x) - \text{(groß Buchstabe)}
+\end{align}
+
+\textbf{Zufallsvariable (Großbuchstabe):}
+\begin{align}
+X - \text{(z.B. Ereignis Würfelwurf)}
+\end{align}
+
+\textbf{Realisierung (Kleinbuchstabe):}
+\begin{align}
+x - (\text{z.B. } x \epsilon \{1,2,3,4,5,6\} \text{ oder x:} 1,2,3,4,5,6)
+\end{align}
+
+\textbf{Bedingte Wahrscheinlichkeit:}
+\begin{align}
+P(A \cap B) &= P(A,B) = P(A|B) \cdot P(B)
+\end{align}
+
+\textbf{Satz der totalen Wahrscheinlichkeit:}
+\begin{align}
+P(A) &= \sum_K P(B_K)P(A|B_K)
+\end{align}
+
+\textbf{Beziehung für die Vereinigung von Ereignissen:}
+\begin{align}
+P(A \cup B) &= P(A) + P(B) - P(A \cap B)
+\end{align}
+
+\textbf{Bedingung für statistische Unabhängigkeit:}
+\begin{align}
+P(A \cap B) = P(A) \cdot P(B)
+\end{align}
+
+\textbf{Wahrscheinlichkeitsverteilung:}
+$X \sim P$
+
+\textbf{Gaußsche Zufallsvariable:}
+\begin{align}
+p_X(x) &= \frac{1}{\sigma\sqrt{2\pi}} \cdot e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}, \quad X \sim N(\mu,\sigma^2)
+\end{align}
+
+Momente für: $X \sim N(\mu,\sigma^2)$:
+\begin{align}
+\mathbb{E}[X] &= \mu\\
+\mathbb{E}[X^2] &= \sigma^2 + \mu^2\\
+\mathbb{E}[X^3] &= \mu^3 + 3\mu\sigma^2\\
+\mathbb{E}[X^4] &= \mu^4 + 6\mu^2\sigma^2 + 3\sigma^4
+\end{align}
+
+\textbf{Weißes Rauschen:}
+\begin{align}
+R_{WW}(k) &= \sigma_W^2 \cdot \delta(k)
+\end{align}
+
+Eigenschaften:
+\begin{itemize}
+\item Unkorreliert für Zeitpunkte $k \neq 0$, bei $k = 0$ ist die Korrelation gleich der Varianz
+\item Mittelwert frei: $\mathbb{E}[W(n)] = 0$
+\item Konstantes Leistungsdichtespektrum: $S_{WW}(\Omega) = \sigma_W^2$
+
+\end{itemize}

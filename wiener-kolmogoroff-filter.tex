@@ -1,0 +1,98 @@
+\section{Wiener Kolmogorov Filter}
+
+Verwendung (SNT\_04\_Stoerreduktion, S. 38):
+\begin{itemize}
+\item reine Rauschbefreiung
+\item reine Entzerrung
+\item lineare Prädiktion
+\end{itemize}
+
+Bei gemeinsam normalverteilten Zufallsvariablen sind lineare Filter optimal.
+
+
+\textbf{Ursprüngliches Signal:}
+\begin{align}
+X(n)
+\end{align}
+\textbf{Signal nach Übertragung:}
+\begin{align}
+Y(n)
+\end{align}
+\textbf{Schätzung des Signals:}
+\begin{align}
+Z(n)
+\end{align}
+\textbf{Fehler (Differenz):}
+\begin{align}
+d(n) = X(n) - Z(n)
+\end{align}
+
+\textbf{Filtereinstellung:}
+\begin{align}
+H_{opt}(\Omega) &= \frac{S_{XX}(\Omega)}{S_{XX}(\Omega) + S_{NN}(\Omega)}
+\end{align}
+
+
+\textbf{Orthogonalitätsprinzip:}
+
+Bei einer optimalen Schätzung ist der Fehler orthogonal (senkrecht) zur Schätzung.
+
+\begin{align}
+R_{DZ_{opt}}(0) = \mathbb{E}[d(n)Z_{\text{opt}}(n)] &= 0 \\
+\Leftrightarrow \mathbb{E}[Z_{\text{opt}}(n)^2] &= \mathbb{E}[X(n) Z_{\text{opt}}(n)]
+\end{align}
+
+Besteht das Eingangssignal aus gemeinsam normalverteilten Zufallsvariablen, sind Fehler und Ausgabe dann statistisch unabhängig.
+
+% Final expression for the mean squared error
+Beispielrechnung:
+\begin{align}
+\sigma_d^2 &= \mathbb{E}[(X(n)-Z_{\text{opt}}(n))^2]= \mathbb{E}[X(n)^2 - 2X(n)Z_{\text{opt}}(n) + Z_{\text{opt}}(n)^2] \\
+&= \mathbb{E}[X(n)^2-X(n)Z_{\text{opt}}(n)] \quad \text{|Orthogonalitätsprinzip} \\
+&= \sigma_X^2 - \sum_{k=1}^{N} h_{k,\text{opt}}R_{XX}(k)\quad \text{| wenn }\mu_X = 0 \\
+&= \sigma_X^2 - \mathbf{h}_{\text{opt}}^T\mathbf{r}_{XX}\\
+&= \sigma_X^2 - \mathbf{r}_{XX}^T\mathbf{R}_{XX}^{-1}\mathbf{r}_{XX}
+\end{align}
+
+
+\input{filter/rauschbefreiung}
+\input{filter/praediktionsfilter}
+
+
+\textbf{LTI System:}
+\input{figures/lti}
+
+Frequenzbereich - Multiplikation:
+\begin{align}
+Y(n) = X(n) * h(n) = h(n) * X(n); Y(j\Omega) = X(j\Omega) \cdot H(j\Omega)
+\end{align}
+
+Leistungsdichtespektrum:
+\begin{align}
+S_{YY}(\Omega) = S_{XX}(\Omega) \cdot |H(j\Omega)|^2
+\end{align}
+
+Zusammenhang durch Fourier-Transformation:
+Darstellung des Fourier-Transformation:
+\begin{align}
+h(n) \overset{\mathcal{F}}{\circ\mbox{---}\bullet} H(j\Omega)
+\end{align}
+\begin{align}
+H(j\Omega) &= \mathcal{F}\{h(n)\} = \sum_{n=-\infty}^{\infty} h(n) e^{-j\Omega n} \\
+h(n) &= \mathcal{F}^{-1}\{H(j\Omega)\} = \frac{1}{2\pi} \int_{-\pi}^{\pi} H(j\Omega) e^{j\Omega n} \, d\Omega
+\end{align}
+
+
+\textbf{Faltungsrechenregeln:}
+\begin{align}
+X(n) * \delta(n) = X(n)
+\end{align}
+\begin{align}
+X(n) * \delta(n-m) = X(n-m)
+\end{align}
+\begin{align}
+X(n) * [a \cdot h(n)] = a \cdot [X(n) * h(n)]
+\end{align}
+\begin{align}
+X(j\Omega) \cdot [a \cdot H(j\Omega)] = a \cdot [X(j\Omega) \cdot H(j\Omega)]
+\end{align}
