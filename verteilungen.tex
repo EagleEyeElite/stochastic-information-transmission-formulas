@@ -27,6 +27,15 @@ X - \text{(z.B. Ereignis Würfelwurf)}
 x - (\text{z.B. } x \epsilon \{1,2,3,4,5,6\} \text{ oder x:} 1,2,3,4,5,6)
 \end{align}
 
+\textbf{Kolmogorov-Axiome:} 
+\begin{itemize}
+\item Nicht-Negativität: $P(A) \geq 0$ für alle $A \in \mathcal{F}$
+\item Normierung: $P(\Omega) = 1$
+\item $\sigma$-Additivität: $P(A \cup B) = P(A) + P(B)$, wenn $A \cap B = \emptyset$, disjunktiv
+\end{itemize}
+
+
+
 \textbf{Bedingte Wahrscheinlichkeit:}
 \begin{align}
 P(A \cap B) &= P(A,B) = P(A|B) \cdot P(B)
@@ -34,7 +43,7 @@ P(A \cap B) &= P(A,B) = P(A|B) \cdot P(B)
 
 \textbf{Satz der totalen Wahrscheinlichkeit:}
 \begin{align}
-P(A) &= \sum_K P(B_K)P(A|B_K)
+P(A) &= \sum_K P(A|B_K)P(B_K)
 \end{align}
 
 \textbf{Beziehung für die Vereinigung von Ereignissen:}
@@ -52,7 +61,7 @@ $X \sim P$
 
 \textbf{Gaußsche Zufallsvariable:}
 \begin{align}
-p_X(x) &= \frac{1}{\sigma\sqrt{2\pi}} \cdot e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}, \quad X \sim N(\mu,\sigma^2)
+p_{X \sim N(\mu,\sigma^2)}(x) &= \frac{1}{\sigma\sqrt{2\pi}} \cdot e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
 \end{align}
 
 Momente für: $X \sim N(\mu,\sigma^2)$:

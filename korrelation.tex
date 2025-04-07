@@ -45,7 +45,6 @@ C_{XY} &= \text{Cov}(X,Y) = \mathbb{E}[(X-\mu_X)(Y-\mu_Y)] = \mathbb{E}[XY] - \m
 \rho_{XY} &= \frac{C_{XY}}{\sigma_X \cdot \sigma_Y}
 \end{align}
 
-
 \textbf{Kreuzkorrelation:}
 \begin{align}
 R_{XY}(k) &= \mathbb{E}[X(n)Y(n+k)]
@@ -65,6 +64,11 @@ R_{XX}(k) &= \mathcal{F}^{-1}[S_{XX}(\Omega)] = \frac{1}{2\pi} \int_{-\pi}^{\pi}
 \end{align}
 \begin{align}
 R_{XX}(0) =E[X^2(n)] = P_X(\Omega) \neq P_X
+\end{align}
+
+\text{normierte AKF:}
+\begin{align}
+\rho_{XX}(k) = \frac{R_{XX}(k)}{R_{XX}(0)}
 \end{align}
 
 \textbf{Leistungsdichtespektrum:}

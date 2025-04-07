@@ -35,9 +35,9 @@ Mittelwert (diskret):
 \bar{y}(m,n) = \frac{1}{N}\sum_{k=1}^{N}y_k(m,n)
 \end{align}
 
-\textbf{Zweites Moment (Leistung des Signals):}
+\textbf{Leistung des Signals (Zweites Moment):}
 \begin{align}
-P_X &= \mathbb{E}[X^2] = \int_{x} x^2 \cdot p_X(x) \, dx = R_{XX}(0) = \frac{1}{2\pi} \int_{-\pi}^{\pi} S_{XX}(\Omega) \, d\Omega
+P_X &= \mathbb{E}[X^2] = \int_{x} x^2 \cdot p_X(x) \, dx = \sigma_X^2 + \mu_X^2 = R_{XX}(0) = \frac{1}{2\pi} \int_{-\pi}^{\pi} S_{XX}(\Omega) \, d\Omega
 \end{align}
 
 \textbf{Charakteristische Funktion einer Zufallsvariablen X:}
@@ -50,9 +50,13 @@ Ableitung der Momente aus der charakteristischen Funktion:
 \mathbb{E}[X^n] = \frac{1}{i^n} \left. \frac{d^n}{dt^n} \varphi_X(t) \right|_{t=0}
 \end{align}
 
-\textbf{Varianz/ Dispersion:}
+\textbf{Varianz/ Dispersion (zweites zentrales Moment):}
 \begin{align}
 \sigma_X^2 &= D^2(X) = \mathbb{E}[(X-\mu_X)^2] = P_X - \mu_X^2
+\end{align}
+erstes zentrales Moment:
+\begin{align}
+\mathbb{E}[X-\mu_X] = 0
 \end{align}
 
 \textbf{Transformationsformel für Dichtefunktion:}

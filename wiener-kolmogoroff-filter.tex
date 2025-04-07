@@ -22,14 +22,16 @@ Y(n)
 \begin{align}
 Z(n)
 \end{align}
-\textbf{Fehler (Differenz):}
+\textbf{Fehler (Differenz/ Deviation)/ Residuum:}
 \begin{align}
-d(n) = X(n) - Z(n)
+d(n) = R(n) = X(n) - Z(n)
 \end{align}
+
+Deviation bei Prädiktion, Residuum bei Rauschbefreiung
 
 \textbf{Filtereinstellung:}
 \begin{align}
-H_{opt}(\Omega) &= \frac{S_{XX}(\Omega)}{S_{XX}(\Omega) + S_{NN}(\Omega)}
+H_{opt}(\Omega) &= \frac{S_{XY}(\Omega)}{S_{YY}(\Omega)}
 \end{align}
 
 
@@ -95,4 +97,9 @@ X(n) * [a \cdot h(n)] = a \cdot [X(n) * h(n)]
 \end{align}
 \begin{align}
 X(j\Omega) \cdot [a \cdot H(j\Omega)] = a \cdot [X(j\Omega) \cdot H(j\Omega)]
+\end{align}
+
+\text{Beispiele:}
+\begin{align}
+\mathcal{F}^{-1}\{a\} = a \cdot \delta(n)
 \end{align}

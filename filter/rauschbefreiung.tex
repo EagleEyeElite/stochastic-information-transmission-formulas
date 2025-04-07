@@ -33,3 +33,20 @@ R_{XY}(0) \\
 R_{XY}(1)
 \end{bmatrix}
 \end{align}
+
+
+
+\text{Filtereinstellung:}
+\begin{align}
+H_{opt}(\Omega) &=\frac{S_{XY}(\Omega)}{S_{YY}(\Omega)} = \frac{S_{XX}(\Omega)}{S_{XX}(\Omega) + S_{NN}(\Omega)}
+\end{align}
+
+\begin{align}
+S_{XY}(\Omega) &= \mathcal{F}\{\mathbb{E}[X(n)\cdot Y(n+m)]\} = \mathcal{F}\{\mathbb{E}[X(n)\cdot(X(n+m) + N(n+m))]\}\\
+R_{XN}(k) = 0 \Rightarrow \quad S_{XY}(\Omega) &= \mathcal{F}\{\mathbb{E}[X(n)\cdot X(n+m)]\} = S_{XX}(\Omega)
+\end{align}
+\begin{align}
+S_{YY}(\Omega) &= \mathcal{F}\{\mathbb{E}[Y(n)\cdot Y(n+m)]\} = \mathcal{F}\{\mathbb{E}[(X(n) + N(n))\cdot(X(n+m) + N(n+m))]\}\\
+R_{XN}(k) = 0 \Rightarrow S_{YY}(\Omega) &= \mathcal{F}\{\mathbb{E}[X(n)\cdot X(n+m)] + \mathbb{E}[N(n)\cdot N(n+m)]\} = S_{XX}(\Omega) + S_{NN}(\Omega)
+\end{align}
+
